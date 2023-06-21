@@ -16,7 +16,7 @@ mongoose.connect('mongodb+srv://Soumyadip:20csu214@cluster0.jm2zckm.mongodb.net/
 app.use(cors())
 app.use(bodyParser.json())
 app.use('/mean',Mean)
-router.get('/',(req,res)=>{
+app.get('/',(req,res)=>{
     res.send("Backend Working")
 })
 app.listen(port,()=>{
