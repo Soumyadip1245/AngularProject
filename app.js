@@ -13,7 +13,11 @@ mongoose.connect('mongodb+srv://Soumyadip:20csu214@cluster0.jm2zckm.mongodb.net/
 }).catch((e)=>{
     console.log(e)
 })
-app.use(cors())
+app.use(cors({
+    origin: ['https://angularproject-6ac4f.web.app'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type']
+  }));
 app.use(bodyParser.json())
 app.use('/mean',Mean)
 app.get('/',(req,res)=>{
